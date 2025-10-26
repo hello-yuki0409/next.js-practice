@@ -1,0 +1,29 @@
+{
+  // 保存時に必ずフォーマット
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+
+  // デフォルトフォーマッターを Prettier に固定（ワークスペース単位）
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // 言語別（競合つぶし）
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
+  // ローカルの Prettier を必ず使う（解決失敗対策）
+  "prettier.prettierPath": "node_modules/prettier/index.cjs",
+
+  // 設定ファイル必須（.prettierrc を使わせる）
+  "prettier.requireConfig": true,
+
+  // ESLint も同時に自動修正（入れてある場合）
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+
+  // タイムアウト回避（保存時フォーマットが遅い時の保険）
+  "editor.codeActionsOnSaveTimeout": 5000
+}
