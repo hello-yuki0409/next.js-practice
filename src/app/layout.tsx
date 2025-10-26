@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const robotoMono = Roboto_Mono({
   variable: "--font-roboto-mono",
@@ -19,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="container mx-auto bg-slate-700 text-slate-50">
         <Header />
         {children}
-        <footer>footer</footer>
+        <Footer />
       </body>
     </html>
   );
