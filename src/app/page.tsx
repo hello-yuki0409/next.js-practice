@@ -5,6 +5,14 @@ import { getAllArticles } from "../blogAPI";
 export default async function Home() {
   const articles = await getAllArticles();
 
+  // CSRの時以下
+  // useEffect(() => {
+  //   const getAllBlogs= async()=> {
+  //     const res = await fetch('http://localhost:3001/posts')
+  //   };
+  //   getAllBlogs();
+  // },[]);
+
   return (
     <div className="md:flex">
       <section className="w-full md:w-2/3 flex flex-col items-center px-3">

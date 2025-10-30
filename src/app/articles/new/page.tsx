@@ -1,6 +1,5 @@
 "use client";
 
-// import { createArticle } from "@/pages/api/articles/articles";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
@@ -17,7 +16,6 @@ const CreateArticle = () => {
     e.preventDefault();
     setLoading(true);
 
-    // await createArticle(id, title, content);
     const newArtilce = await fetch(`${API_URL}/api`, {
       method: "POST",
       headers: {

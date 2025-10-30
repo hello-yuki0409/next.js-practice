@@ -1,0 +1,6 @@
+{
+  "posts": [
+    { "id": 1, "title": "Hello Next.js", "content": "最初の投稿", "createdAt": "2025-10-30" },
+    { "id": 2, "title": "Second Post", "content": "内容…", "createdAt": "2025-10-30" }
+  ]
+}
