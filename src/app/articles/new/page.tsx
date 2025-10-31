@@ -34,7 +34,7 @@ const CreateArticle = () => {
 
   return (
     <div className="min-h-screen py-8 px-4 md:px-12">
-      <h2 className="text-2xl font-bold mb-4">ブログ新規作成</h2>
+      <h2 className="text-2xl font-bold mb-4">ブログを新規作成</h2>
 
       <form onSubmit={handleSubmit} className="bg-slate-200 p-6 rounded shadow-lg">
         <div className="mb-4">
