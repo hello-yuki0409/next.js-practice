@@ -1,31 +1,22 @@
 "use client";
 
+import { createArticles } from "@/src/blogAPI";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const CreateArticle = () => {
   const router = useRouter();
-  const [id, setId] = useState("");
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [id, setId] = useState<string>("");
+  const [title, setTitle] = useState<string>("");
+  const [content, setContent] = useState<string>("");
   const [loading, setLoading] = useState(false);
 
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault(); // ページのリロード防ぐ
     setLoading(true);
-
-    const newArtilce = await fetch(`${API_URL}/api`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ id, title, content }),
-    });
-
-    console.log("new article");
-    console.log(newArtilce);
+    await createArticles(id, title, content);
 
     setLoading(false);
     router.push("/");
