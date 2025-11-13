@@ -9,7 +9,7 @@ const CreateArticle = () => {
   const [id, setId] = useState<string>("");
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
