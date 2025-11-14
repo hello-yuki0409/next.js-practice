@@ -12,6 +12,7 @@
     "dev:api": "json-server --watch db.json --port 3001"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.81.1",
     "next": "^13.4.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
