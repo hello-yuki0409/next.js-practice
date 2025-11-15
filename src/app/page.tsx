@@ -3,8 +3,6 @@ import ArticleList from "./components/ArticleList";
 import { getAllArticles } from "../blogAPI";
 
 export default async function Home() {
-  const articles = await getAllArticles();
-
   // CSRの時以下
   // useEffect(() => {
   //   const getAllBlogs= async()=> {
@@ -12,6 +10,11 @@ export default async function Home() {
   //   };
   //   getAllBlogs();
   // },[]);
+
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+  const res = await fetch(`${API_URL}/api`, { cache: "no-store" });
+  const articles = await res.json();
 
   return (
     <div className="md:flex">
