@@ -14,7 +14,7 @@ export const getAllArticles = async (): Promise<Article[]> => {
 };
 
 export const getDetailArticles = async (id: string): Promise<Article> => {
-  const res = await fetch(`http://127.0.0.1:3001/posts"${id}`, {
+  const res = await fetch(`http://127.0.0.1:3001/posts/${id}`, {
     next: { revalidate: 60 },
   }); // 60秒ごとにISRで再生成
 
